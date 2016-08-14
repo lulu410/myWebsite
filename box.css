@@ -1,0 +1,32 @@
+.inputbox{
+	color:white;
+	position:relative;
+	border-spacing: 1vh;
+	position: top left;
+	font-size:10pt;
+    height:75vh;
+    width:75vh;
+    background-color: rgb(75,85,104);
+}
+
+.outputbox{
+	margin-left: 3em;
+	padding-right: 1em;
+	border-spacing: 1vh;
+	position:absolute;
+	color: white;
+	font-size:10pt;
+    height:50vh;
+    width:60vh;
+    background-color: rgb(10,10,10);
+    border-width: 0.8em;
+    border-color: gray;
+    border-style: ridge;
+}
+
+title{
+  color: white;
+}
+body{
+	background-color: rgb(38,40,74);
+}
