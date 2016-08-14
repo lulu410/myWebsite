@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" type="text/css" href="box.css">
+<link rel="stylesheet" type="text/css" href="box.css">				            
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet'>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="input.js"></script>	
 <title>Naive Python Interpreter</title>
 <!-- <form>
   Enter your python byte code
   <br><input type="text" id="text" name="code" class="inputbox"></br>
 </form> -->
-<form action="demo_form.asp" id="usrform">
+
   <font size="6" color="white">Enter your python byte code </font>
-  <input type="submit">
-</form>
+  <input type="submit" class="submit">
+
 <div align="left">
-<textarea name="comment" form="usrform" class="inputbox"></textarea>
+<textarea name="comment" id="input" form="usrform" class="inputbox"></textarea>
 	<span align="float: right;float:top">
 		<textarea name="result" form="usrform" class="outputbox"></textarea>
 	</span>
