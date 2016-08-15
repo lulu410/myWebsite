@@ -15,18 +15,53 @@ function ADD_TWO_VALUES(stack){
     return stack;
 }
 
-function interpret(text){
+function interpret(text, dictionary){
     var stack = [];
-
-    return text;
+    var instructions = dictionary["instructions"];
+    console.log("dictionary is \n");
+    console.log(dictionary);
+    console.log("instructions are \n");
+    console.log(instructions);
+    var numbers = dictionary["numbers"];
+    console.log("numbers are ".concat(numbers));
+    for(var i = 0; i < instructions.length; i++){
+        var instruction = instructions[i][0];
+        var argument = instructions[i][1];
+        console.log("argument is ".concat(argument));
+        if (instruction == "LOAD_VALUE"){            
+            var number = numbers[argument];
+            stack = LOAD_VALUE(stack, number);
+            console.log(stack.concat("oh my god"));
+        }
+        else if (instruction == "ADD_TWO_VALUES"){
+            stack = ADD_TWO_VALUES(stack);
+            console.log(stack.concat("ohhhhhh my god"));
+        }
+        else if (instruction == "PRINT_ANSWER"){
+            console.log("stack print ".concat(stack));
+            stack = PRINT_ANSWER(stack);
+            console.log(stack);
+        }
+    }
+    return stack;
 
 }
+var what_to_execute = {
+        "instructions": [["LOAD_VALUE", 0],
+                         ["LOAD_VALUE", 1],
+                         ["ADD_TWO_VALUES", NaN],
+                         ["LOAD_VALUE", 2],
+                         ["ADD_TWO_VALUES", NaN],
+                         ["PRINT_ANSWER", NaN]],
+        "numbers": [7, 5, 8] };
 
 function main(){
     var text = "";
+    var dictionary = {};
     $('.submit').click(function(){
         text = $('.inputbox').val();
-        $('.outputbox').text(interpret(text));
+        $('.outputbox').text(interpret(text, what_to_execute));
+        //console.log(interpret(text, what_to_execute));
     });
 }
 
